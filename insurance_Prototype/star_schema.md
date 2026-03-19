@@ -1,4 +1,4 @@
-erDiagram
+```mermaid erDiagram
     FACT_INSURANCE ||--o{ DIM_CLIENT : client_id
     FACT_INSURANCE ||--o{ DIM_EMPLOYEE : employee_id
     FACT_INSURANCE ||--o{ DIM_BRANCH : branch_id
@@ -77,5 +77,5 @@ erDiagram
     DIM_CLIENT_TYPE {
         int clientType_id PK
         string clientType_name
-    }
+    }```
 
