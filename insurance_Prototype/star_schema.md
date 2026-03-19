@@ -1,3 +1,5 @@
+```mermaid
+
 erDiagram
 
     FACT_INSURANCE {
@@ -93,3 +95,5 @@ erDiagram
     DIM_EMPLOYEE }o--|| DIM_LOCATION : "location_id"
 
     DIM_BRANCH }o--|| DIM_LOCATION : "location_id"
+
+    ```
