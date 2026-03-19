@@ -1,5 +1,16 @@
-```mermaid
 erDiagram
+    FACT_INSURANCE ||--o{ DIM_CLIENT : client_id
+    FACT_INSURANCE ||--o{ DIM_EMPLOYEE : employee_id
+    FACT_INSURANCE ||--o{ DIM_BRANCH : branch_id
+    FACT_INSURANCE ||--o{ DIM_INSURANCE_TYPE : insuranceType_id
+    FACT_INSURANCE ||--o{ FACT_PAYMENT : payment_id
+    FACT_CLAIM ||--o{ FACT_INSURANCE : insurance_id
+    FACT_CLAIM ||--o{ DIM_CLAIM_STATUS : cs_id
+    DIM_CLIENT ||--o{ DIM_CLIENT_TYPE : clientType_id
+    DIM_CLIENT ||--o{ DIM_LOCATION : location_id
+    DIM_EMPLOYEE ||--o{ DIM_LOCATION : location_id
+    DIM_BRANCH ||--o{ DIM_LOCATION : location_id
+
     FACT_INSURANCE {
         int insurance_id PK
         string insurance_number
@@ -68,16 +79,3 @@ erDiagram
         string clientType_name
     }
 
-    FACT_INSURANCE ||--o{ DIM_CLIENT : client_id
-    FACT_INSURANCE ||--o{ DIM_EMPLOYEE : employee_id
-    FACT_INSURANCE ||--o{ DIM_BRANCH : branch_id
-    FACT_INSURANCE ||--o{ DIM_INSURANCE_TYPE : insuranceType_id
-    FACT_INSURANCE ||--o{ FACT_PAYMENT : payment_id
-    FACT_CLAIM ||--o{ FACT_INSURANCE : insurance_id
-    FACT_CLAIM ||--o{ DIM_CLAIM_STATUS : cs_id
-    DIM_CLIENT ||--o{ DIM_CLIENT_TYPE : clientType_id
-    DIM_CLIENT ||--o{ DIM_LOCATION : location_id
-    DIM_EMPLOYEE ||--o{ DIM_LOCATION : location_id
-    DIM_BRANCH ||--o{ DIM_LOCATION : location_id
-
-    ```
